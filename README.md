@@ -42,7 +42,10 @@
     The websites that I get my information from are 
     </p>
     <p>
-    <a href = "http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)"> NUS </a> , and  <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
+    <a href = "http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)"> NUS </a> 
+    </p>
+    <p>
+    <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
     </p>
     <br />
     <a href="https://github.com/TohDeKai/available_uni_courses"><strong>Explore the docs »</strong></a>
@@ -77,6 +80,9 @@ Toh De Kai  - tohdekai@outlook.com
 
 Project Link: [https://github.com/TohDeKai/available_uni_courses](https://github.com/TohDeKai/available_uni_courses)
 
+<p>
+Special thanks to <a href = "https://github.com/othneildrew"> Othneil Drew</a> for his <a href = "https://github.com/othneildrew/Best-README-Template"> README Template </a>.
+</p>
 
 
 
