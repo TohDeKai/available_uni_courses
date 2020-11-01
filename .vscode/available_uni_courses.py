@@ -56,7 +56,7 @@ for i in igp_elems[3:48]:
     uas_for_course += grade_to_uas[igp_grades.text[4]]/2
     # Since GP and PW assumed to be C
     uas_for_course += 15
-    if uas_for_course < total_uas:
+    if uas_for_course <= total_uas:
         print ('NUS',",",course_elem.text,",",uas_for_course) 
         print ('\n')
 
