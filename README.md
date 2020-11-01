@@ -23,7 +23,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/tohdekai/]
+<a href = 'https://www.linkedin.com/in/tohdekai'>[![LinkedIn][linkedin-shield]]</aref>
 
 
 
