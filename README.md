@@ -23,8 +23,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-<a href = 'https://www.linkedin.com/in/tohdekai'>[![LinkedIn][linkedin-shield]]</aref>
-
 
 
 <!-- PROJECT LOGO -->
@@ -41,7 +39,10 @@
     This script compares results of the students against the 10th percentile of the Indicative Grade Profile (IGP), and it prints the courses which the student is able to take according to that.
     </p>
     <p>
-    The websites that I get my information from are <a href = "http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)"> NUS </a> , <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
+    The websites that I get my information from are 
+    </p>
+    <p>
+    <a href = "http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)"> NUS </a> , and  <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
     </p>
     <br />
     <a href="https://github.com/TohDeKai/available_uni_courses"><strong>Explore the docs »</strong></a>
@@ -71,6 +72,8 @@
 ## Contact
 
 Toh De Kai  - tohdekai@outlook.com
+
+<a href = 'https://www.linkedin.com/in/tohdekai'>[![LinkedIn][linkedin-shield]]</aref>
 
 Project Link: [https://github.com/TohDeKai/available_uni_courses](https://github.com/TohDeKai/available_uni_courses)
 
