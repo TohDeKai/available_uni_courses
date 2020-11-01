@@ -1,7 +1,8 @@
 # Importing essential modules
-import requests
 from bs4 import BeautifulSoup
+from pypdf2 import PdfFileReader
 
+'''
 # A-Level Grades Conversion to UAS
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
 
@@ -24,16 +25,16 @@ try:
     print ('\n')
 except KeyError:
     print ("Only letter grades are accepted. For example, \"A\" or \"B\"")
-
+'''
 # Web - Scraping
 
-URL = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
-page = requests.get(URL)
+#NUS
+'''
+URL_NUS = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
+page = requests.get(URL_NUS)
 
 soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find(id='ContentPlaceHolder_contentPlaceholder_TC88F994D007_Col00')
-
-# print(results.prettify())
 
 igp_elems = results.find_all("tr", class_=False, id=False)
 
@@ -55,3 +56,12 @@ for i in igp_elems[3:48]:
     if uas_for_course < total_uas:
         print (course_elem.text,",",uas_for_course) 
         print ('\n')
+'''
+'''
+#NTU
+URL_NTU = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
+page = requests.get(URL_NTU)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+print (soup)
+'''
