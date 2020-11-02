@@ -47,6 +47,9 @@
     <p>
     <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
     </p>
+    <p>
+    <a href = "https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp"> SMU </a>.
+    </p>
     <br />
     <a href="https://github.com/TohDeKai/available_uni_courses"><strong>Explore the docs »</strong></a>
     <br />
