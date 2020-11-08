@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:article="http://ogp.me/ns/article#"
+  xmlns:book="http://ogp.me/ns/book#"
+  xmlns:profile="http://ogp.me/ns/profile#"
+  xmlns:video="http://ogp.me/ns/video#"
+  xmlns:product="http://ogp.me/ns/product#"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"061354ff2a",applicationID:"56769272"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/smu_favicon.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp" />
+<link rel="shortlink" href="https://admissions.smu.edu.sg/node/1356" />
+<meta property="og:site_name" content="Undergraduate Admissions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp" />
+  <meta name="google-site-verification" content="2mtiDWvL8669v88NHQ9slh2h546fxGqOR6BnndBN8FE" />
+  <meta name="google-site-verification" content="3dR-zyVFatwlYGEhNtPMUMVHZOJ7nMx6OTGzhyZjZiU" />
+  
+  <title>Indicative Grade Profiles (IGP) - Undergraduate Admissions</title>
+  <link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_RKGnKikaH_TFynG5kiq18hiRcRPCBdvkYkIDM2OPn7E.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_6fVhUTuWXY8QEVaiRdHTB7eneOii34C7J1rIv05hv6c.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_jX9kpP_g4TLiGX9W4GoDzPJI-5McOMcdv6w4QXw3X88.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_s_QoHQlAAltW1kEtG7h6vY5iIB_KyLmoug2Dhfa6UO0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_HcR0hi13VPsEbckHSwwuGPEWpg2TKraUeAJZkitITgk.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#sliding-popup.sliding-popup-bottom,#sliding-popup.sliding-popup-bottom .eu-cookie-withdraw-banner,.eu-cookie-withdraw-tab{background:#0779bf;}#sliding-popup.sliding-popup-bottom.eu-cookie-withdraw-wrapper{background:transparent}#sliding-popup .popup-content #popup-text h1,#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text h3,#sliding-popup .popup-content #popup-text p,.eu-cookie-compliance-secondary-button,.eu-cookie-withdraw-tab{color:#fff !important;}.eu-cookie-withdraw-tab{border-color:#fff;}
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_pnvg90utUQ4FzqnYVYfxJdk62SVSd45HsDymGmt-U_A.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/files/css/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print" />
+  <link type="text/css" rel="stylesheet" href="/sites/admissions.smu.edu.sg/files/assets2018/css/app.min.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/admissions.smu.edu.sg/modules/contrib/jquery_update/replace/jquery/1.8/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/jquery-extend-3.4.0.js?v=1.8.3"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.8.3"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/drupal.js?qj7nyd"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/admissions.smu.edu.sg/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/ajax.js?v=7.73"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/spamspan/spamspan.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/back_to_top/js/back_to_top.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/libraries/colorbox/jquery.colorbox-min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/colorbox/js/colorbox.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/colorbox/styles/default/colorbox_style.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/colorbox/js/colorbox_load.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/all/modules/colorbox/js/colorbox_inline.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/bs_shortcodes/includes/js/bootstrap-shortcodes-tooltip.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/bs_shortcodes/includes/js/bootstrap-shortcodes-popover.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/misc/progress.js?v=7.73"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/npop/js/npop.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/modules/contrib/npop/js/npop-ajax.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/radix/assets/javascripts/modernizr.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/radix-script.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/vendors/hero-slider/js/main.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/vendors/js-cookie/js.cookie.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/jquery-1.12.4.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/popper.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/bootstrap.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/bootstrap.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/wow.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/nav_menu.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/jquery-ui.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/filter.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_js/bottom.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/script.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smu_2019/assets/js/custom_2019.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/radix/assets/javascripts/radix-progress.js?qj7nyd"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"smu_admissions2015","theme_token":"0yL1DHzWU8wosTu8VX20IkpqntPkvooAKPMZ1jU9ZzU","jquery_version":"1.8","js":{"0":1,"1":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/mobile-detect.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/aws-sdk-2.555.0.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/chat.badwords.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/profile.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/chat.main.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/chat.client.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/chatbot\/chat.init.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/jquery.cookie.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.8.3\/jquery.min.js":1,"2":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"3":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"misc\/ajax.js":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/spamspan\/spamspan.js":1,"sites\/all\/modules\/back_to_top\/js\/back_to_top.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/bs_shortcodes\/includes\/js\/bootstrap-shortcodes-tooltip.js":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/bs_shortcodes\/includes\/js\/bootstrap-shortcodes-popover.js":1,"misc\/progress.js":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/npop\/js\/npop.js":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/npop\/js\/npop-ajax.js":1,"sites\/admissions.smu.edu.sg\/themes\/radix\/assets\/javascripts\/modernizr.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/radix-script.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/vendors\/hero-slider\/js\/main.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/vendors\/js-cookie\/js.cookie.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/jquery-1.12.4.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/popper.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/bootstrap.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/bootstrap.min.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/wow.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/nav_menu.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/jquery-ui.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/filter.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_js\/bottom.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/javascripts\/script.js":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smu_2019\/assets\/js\/custom_2019.js":1,"sites\/admissions.smu.edu.sg\/themes\/radix\/assets\/javascripts\/radix-progress.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/find_content\/find_content.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/views_filters_summary\/views_exposed_filters_summary.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/back_to_top\/css\/back_to_top.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/ctools\/css\/ctools.css":1,"\/\/cdn.jsdelivr.net\/fontawesome\/4\/css\/font-awesome.min.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/panels\/css\/panels.css":1,"public:\/\/ctools\/css\/d41d8cd98f00b204e9800998ecf8427e.css":1,"sites\/all\/modules\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/sooperthemes_basic_shortcodes\/css\/sooperthemes-basic-shortcodes.css":1,"sites\/admissions.smu.edu.sg\/modules\/contrib\/npop\/css\/animations.css":1,"0":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/stylesheets\/screen.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/colors.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/bootstrap.min.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/elements.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/smu_style.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/responsive.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/font-awesome.min.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/font-awesome.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/animation.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/custom.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smu_2019\/assets\/css\/custom_2019.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smu_2019\/assets\/css\/style-landing-page.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/assets\/stylesheets\/print.css":1,"sites\/admissions.smu.edu.sg\/themes\/smu_admissions2015\/smunew_css\/print.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"back_to_top":{"back_to_top_button_trigger":100,"back_to_top_button_text":"Back to top","#attached":{"library":[["system","ui"]]}},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":true,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info container-fluid\u0022\u003E\n    \u003Cdiv class=\u0022row\u0022\u003E\n  \u003Cdiv id=\u0022popup-text\u0022 class=\u0022col-md-8 col-sm-8 col-xs-12\u0022\u003E\n      \u003Ch2\u003EThis website uses cookies as well as similar tools and technologies to identify, understand and improve visitors\u2019 experiences.\u003C\/h2\u003E\n\u003Cp class=\u0022cookie-txt\u0022\u003EBy continuing without changing your cookie setting, we assume that you agree to this. Otherwise, you may change the cookie setting in your browser. To find out more, please visit \u003Ca href=\u0022https:\/\/www.smu.edu.sg\/terms-use#cookiespolicy\u0022 target=\u0022_blank\u0022\u003Eour Cookies Policy.\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022col-md-4 col-sm-4 col-xs-12\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EClose\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button agree-button eu-cookie-compliance-default-button\u0022\u003ESMU Cookies Policy\u003C\/button\u003E\n                \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info container-fluid\u0022\u003E\n    \u003Cdiv class=\u0022row\u0022\u003E\n  \u003Cdiv id=\u0022popup-text\u0022 class=\u0022col-md-8 col-sm-8 col-xs-12\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022col-md-4 col-sm-4 col-xs-12\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EClose\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button agree-button eu-cookie-compliance-default-button\u0022\u003ESMU Cookies Policy\u003C\/button\u003E\n                \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003C\/div\u003E\n\u003C\/div\u003E\n","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\n\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003ESMU Cookies Policy\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"https:\/\/www.smu.edu.sg\/terms-use#cookiespolicy","popup_link_new_window":1,"popup_position":null,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":0,"reload_page":0,"domain":"","popup_eu_only_js":0,"cookie_lifetime":100,"cookie_session":false,"disagree_do_not_show_popup":0,"method":"default","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\n\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false},"urlIsAjaxTrusted":{"\/search\/node":true,"\/admissions\/indicative-grade-profiles-igp":true},"shortcode_wysiwyg":{"current_form":"form-FcPZJiAUAx7o5XSW4LrEBtKPmbU2qtp30eKcaz93uWo"},"npop_overlay_close":false});
+//--><!]]>
+</script>
+  <script type="text/javascript" src="/sites/admissions.smu.edu.sg/files/assets2018/js/chart.bundle.min_.js"></script>
+  <script type="text/javascript" src="/sites/admissions.smu.edu.sg/files/assets2018/js/jquery.bxslider.js"></script>
+  <!--[if lt IE 9]>
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+   </script>
+  <![endif]-->
+  
+  <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=290756,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWNWDH');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1356 node-type-admission panel-layout-bootstrap_twocol_stacked panel-region-top section-admissions" >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWNWDH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div id="skip-link">
+    <a href="#main" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <header>
+
+                        
+<div id="announcement" class="container-fluid">
+  <div class="container announcement"> 
+      <div class="region region-announcement">
+    <div id="block-block-156" class="block block-block">
+
+    
+  <div class="content">
+    <style type="text/css">
+#announcement {
+    background: crimson;
+color:#fff;
+position: fixed;
+width:100%
+}
+#announcement .announcement {
+    padding: 5px 15px;
+}
+#announcement p {
+    padding: 0;
+    margin: 0;
+}
+#announcement a {
+font-size:13px;
+color:#fff;
+}
+#announcement  .fas.fa-external-link-alt {
+    margin-left: 5px;
+    font-size: 10px;
+}
+.navbar-fixed-top{
+top:30px !important;
+}
+
+@media (max-width: 650px) and (min-width: 320px){
+.navbar-fixed-top{
+top:52px !important;
+}
+#announcement a {
+font-size:9px;
+}
+#announcement{
+padding-left:0;
+padding-right:0;
+}</style>
+<center><strong style="text-transform:uppercase;">The Admissions Office is temporarily closed, but you can email us at <a href="mailto:admissions@smu.edu.sg">admissions@smu.edu.sg</a> if you need assistance.</strong></center>  </div>
+</div>
+  </div>
+</div>             
+  </div>                          
+</div>      
+
+<nav class="navbar navbar-fixed-top" data-spy="affix" data-offset-top="1">
+<div class="container-fulid">
+  <div class="row">
+    <div class="col-sm-2 logosec">
+      <a href="https://admissions.smu.edu.sg/" title="Undergraduate Admission" rel="home" id="logo">
+            <img src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/smu_oua_logo-new.png" alt="Undergraduate Admission" />
+         </a>
+    </div>
+    <div class="col-sm-8 no_paddmenu">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> </button>
+      </div>
+     	      <div class="navbar-collapse collapse" id="navbar-brand-centered">
+		<nav role="navigation">
+		  		    <ul class="menu nav navbar-nav"><li class="first leaf menu-link-home"><a href="/" target="_self">Home</a></li>
+<li class="leaf menu-link-why-smu"><a href="/whysmu" target="_self">Why SMU</a></li>
+<li class="leaf menu-link-programmes"><a href="/programmes" target="_self">PROGRAMMES</a></li>
+<li class="leaf menu-link-scholarships"><a href="/scholarships">Scholarships</a></li>
+<li class="expanded dropdown menu-link-financial-matters"><a href="/financial-matters" target="_self" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Financial Matters<span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf menu-link-tuition-fees-and-grants"><a href="/tuition-fees-grant">Tuition fees and grants</a></li>
+<li class="leaf menu-link-financial-aid"><a href="/financial-aid">Financial aid</a></li>
+<li class="last leaf menu-link-student-employment-system"><a href="/student-employment-system">Student Employment System</a></li>
+</ul></li>
+<li class="leaf menu-link-faqs"><a href="/faqs" target="_self">FAQs</a></li>
+<li class="leaf menu-link-admissions"><a href="/admissions" target="_self">ADMISSIONS</a></li>
+<li class="expanded dropdown menu-link-our-community"><a href="/our-community" target="_self" class="dropdown-toggle" data-toggle="dropdown" data-target="#">OUR COMMUNITY<span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf menu-link-meet-current-students"><a href="/our-community" target="_self">Meet Current Students</a></li>
+<li class="leaf menu-link-read-graduate-stories"><a href="https://admissions.smu.edu.sg/why-smu/hear-from-your-seniors" target="_blank">Read Graduate Stories</a></li>
+<li class="leaf menu-link-latest-news"><a href="https://admissions.smu.edu.sg/news" target="_blank">Latest News</a></li>
+<li class="last leaf menu-link-hear-from-faculty"><a href="https://admissions.smu.edu.sg/faculty">Hear from Faculty</a></li>
+</ul></li>
+<li class="last leaf menu-link-visit-us"><a href="/visit-us">Visit us</a></li>
+ 
+		    </ul>
+		  		  		</nav>
+	      </div><!-- /.navbar-collapse -->
+	        </div>
+    <div class="col-sm-2 col-xs-10 text-center">
+        <form class="form-search content-search" action="/admissions/indicative-grade-profiles-igp" method="post" id="search-block-form" accept-charset="UTF-8" role="form"><div><div class="container-inline form-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="input-group"><input title="Enter the terms you wish to search for." placeholder="Search" class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><span class="input-group-btn"><button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button></span></div><input class="element-invisible form-submit btn btn-default btn-primary" type="submit" id="edit-submit--2" name="op" value="Search" /><input type="hidden" name="form_build_id" value="form-FcPZJiAUAx7o5XSW4LrEBtKPmbU2qtp30eKcaz93uWo" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>    </div>
+  </div>
+  </nav>
+  </header>
+
+<section class="page-header-section">
+      <div class="container">
+                <div id="page-header">
+                      <div class="page-header">
+              <h1 class="title">Indicative Grade Profiles (IGP)</h1>
+            </div>
+                                      </div>
+      </div>
+    </section>
+
+
+<div class="scholarshipbanner">
+                                                   </div>
+
+
+
+    
+
+            <div id="content IndicativeGradeProfiles(IGP)"  class="column">
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="bootstrap-twocol-stacked" >
+      <div class="row">
+      <div class="panel-panel top col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="panel-pane pane-node-content"  >
+  
+      
+  
+  <div class="pane-content">
+    <article class="node node-admission node-admission node-admission-full nid-1356 clearfix" about="/admissions/indicative-grade-profiles-igp" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+    <div class="field field-name-field-details field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="cont_width">
+<div class="panel-pane pane-node-content">
+<div class="pane-content"><article about="/admissions/indicative-grade-profiles-igp" class="node node-admission node-admission node-admission-full nid-1356 clearfix" typeof="sioc:Item foaf:Document"><br />
+<div class="content">
+<div class="field field-name-field-details field-type-text-long field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<h2>Indicative Grade Profiles and Number of Course Places</h2>
+<h2>Guidance Information for 2020 University Admissions Exercise (Published on 18 December 2019)</h2>
+<p>1. To help applicants make their course choices when applying for admission in the 2020 University Admissions Exercise, we are providing information in the following areas. The information is to be used as a guide only.</p>
+<ul>
+<li><strong>Table 1 : </strong>Representative grade profiles<sup>1 </sup>of the <strong>10th and 90th percentiles</strong> of applicants holding <strong>Singapore-Cambridge GCE A-Level</strong> qualifications who were offered places in the 2019 University Admissions Exercise. The grade profiles refer to the grades in the 3 H2 and 1 H1 content-based subjects. For the purpose of this exercise, Grade “C” is assumed for both General Paper (GP) and Project Work (PW) in determining the grade profiles. Certain courses may require grades higher than “C” grade for GP.</li>
+<li><strong>Table 2 : </strong>Representative Polytechnic Grade Point Averages (GPAs) of the <strong>10th and 90th percentiles</strong> of <strong>Polytechnic</strong><sup>2</sup> applicants who were offered places in the 2019 University Admissions Exercise.</li>
+<li><strong>Table 3 :</strong> The number of course places taken up in 2019.</li>
+</ul>
+<p>2. Applicants can expect competition to be keener for courses with more stringent grade requirements, fewer places and higher quality of the applicant pool.</p>
+<p>3. In using the tables below, please note the following:</p>
+<ul>
+<li>The grade profiles, GPAs and number of course places vary from year to year, depending on the number and grade performance of applicants, and the number of places available for each degree programme.</li>
+<li>Meeting the previous year’s grade profiles of a course <strong><u>does not</u></strong> guarantee admission into that course for the current year. In particular, SMU adopts a holistic selection process, whereby in addition to academic grades and cocurricular activity (CCA) records, shortlisted applicants are also assessed by their performances at the interview. For some courses, an essay writing for shortlisted applicants is also conducted.</li>
+<li>The grade profiles do not take into account offers that were made under the Discretionary Admissions Framework.</li>
+</ul>
+<p><sup>1</sup><em>These provide an indication of the grade profiles of Singapore-Cambridge GCE A-Level applicants offered places in the previous year. There could be other “equivalent” profiles for each course. For example, a grade profile of ABC/C could be considered to be broadly equivalent to BBB/C.</em>
+							</p>
+<p><sup>2</sup><em>This refers to applicants from the 5 Polytechnic Institutions in Singapore - Nanyang Polytechnic, Ngee Ann Polytechnic, Republic Polytechnic, Singapore Polytechnic and Temasek Polytechnic.</em></p>
+<h3><strong>Table 1: Grade Profiles of the 10th and 90th percentiles of Singapore- Cambridge GCE A-Level Applicants offered places at SMU in the 2019 University Admissions Exercise</strong></h3>
+<div class="table-responsive">
+<table class="table">
+<tbody>
+<tr>
+<td rowspan="2" style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="50%">SMU Degree</td>
+<td colspan="2" style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">Indicative Grade Profile<br />
+												3H2/1H1 content-based subjects</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="25%">10th Percentile</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="25%">90th Percentile</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Accountancy</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/C</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Business Management</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/C</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Laws</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Economics)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBC/A</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Information Systems)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBC/B</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Computer Science)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAB/B</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Social Science</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBC/B</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><strong>Table 2: Polytechnic GPAs of the 10th and 90th percentiles of Polytechnic Applicants offered places at SMU in the 2019 University Admissions Exercise</strong></h3>
+<div>
+<div class="table-responsive">
+<table class="table">
+<tbody>
+<tr>
+<td rowspan="2" style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="50%">SMU Degree</td>
+<td colspan="2" style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">Indicative Grade Profile<br />
+													GPA</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="25%">10th Percentile</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid" width="25%">90th Percentile</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Accountancy</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.68</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.95</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Business Management</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.68</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.94</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Laws</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">#</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">#</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Economics)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.69</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.92</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Information Systems)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.57</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.92</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Computer Science)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.75</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.96</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Social Science</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.66</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">3.91</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>Maximum GPA : 4.00</div>
+<div>
+<p># No indicative GPA is shown as the sample size is small.</p>
+</div>
+<h3><strong>Table 3: Total number of SMU course places taken up in 2019</strong></h3>
+<div>
+<div class="table-responsive">
+<table class="table">
+<tbody>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">SMU Degree</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">Number of Course Places</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Accountancy</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">349</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Business Management</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">840</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Laws</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">174</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Economics)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">264</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Information Systems)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">448</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Computer Science)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">49</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Social Science</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">244</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>As at 19 August 2019. The number of course places is subject to change from year to year.</p>
+<h2><strong>Frequently Asked Questions (FAQs)</strong></h2>
+<p><strong>Q1 What is the objective of this exercise?</strong><br />
+								A1 The objective of this exercise is to give applicants an insight on the qualifying grade profiles in the 2019 Admissions Exercise  for the different degree programmes. It serves as a guide to help them make informed choices when applying for admission to these programmes in the 2020 Admissions Exercise.</p>
+<p><strong>Q2 What do the representative grade profiles for GCE A-Levels mean?</strong><br />
+								A2 The representative grade profiles refer to the 3 H2 and 1 H1 content-based subject grades (excluding GP/KI/Project Work/Mother Tongue Language) in the Singapore-Cambridge GCE A-Level examinations scored by applicants who have been offered places in SMU. For the purpose of this exercise, Grade “C” is assumed for both General Paper (GP) and Project Work (PW) in determining the grade profiles. Certain courses may require GP grades of higher than “C” grade.</p>
+<p><strong>Q3 What do the representative grade profiles for Polytechnics mean?</strong><br />
+								A3 The representative grade profiles refer to the Grade Point Average (GPA) scored by applicants from the five Polytechnic institutions in Singapore who have been offered places in SMU.</p>
+<p><strong>Q4 What do you mean by the 10th percentile and 90th percentile?</strong><br />
+								A4 This can be best explained by using an example. For example, if the 10th percentile grade profile is ABC/A (3H2/1H1), it means that 90% of the applicants offered places score above ABC/A. If the 90th percentile grade is AAA/B, it means 10% of the successful applicants score above AAA/B. You can use the same reasoning to interpret the 10th percentile and 90th percentile for Polytechnic applicants.</p>
+<p><strong>Q5 Does meeting the 2019 grade profiles mean I will automatically be granted admission in 2020?</strong><br />
+								A5 Meeting the previous year’s grade profiles of a course does not guarantee admission into that course for the current year, as grade profiles vary from year to year. In particular, SMU adopts a holistic selection process, whereby in addition to academic grades and co-curricular activity records, shortlisted applicants are also assessed by their performances at the interviews. For some degree courses, an essay writing for shortlisted applicants is also conducted.</p>
+<p><strong>Q6 Will the grade profiles and number of course places remain the same in future years?</strong><br />
+								A6 The grade profiles and number of course places vary from year to year, depending on the number and grade performance of applicants, and the number of places available for each course.</p>
+<p><strong>Q7 Is it possible for the universities to make available the grade profiles of earlier years?</strong><br />
+								A7 From past experiences, grade profiles of the earlier years do not provide meaningful guidance information. Please refer to the latest grade profiles shown above.</p>
+<p><strong>Q8 Does SMU intend to provide grade profiles for the IB Diploma and the NUS High School Diploma?</strong><br />
+								A8 GCE A-Level and Polytechnic applicants form a much bigger pool and therefore, grade profiles for both groups provide useful information. For the purpose of this exercise, the IB pool and NUS High School pool, being smaller relative to the A-Level and Poly pools, may not provide an accurate picture of the grade profile to prospective applicants. As such, we have not included the grade profiles for both groups.</p>
+<p><strong>Q9 How then will applicants with the IB Diploma or the NUS High School Diploma be assessed for admission?</strong><br />
+								A9 Applicants with the IB Diploma or NUS High School Diploma will be assessed in the same way as those with GCE A-Level or Polytechnic Diplomas. Admission will be on a selective and competitive basis. In particular, SMU adopts a holistic selection process, whereby in addition to academic grades and co-curricular activity records, shortlisted applicants are assessed by their performances at the interviews. For some degree courses, an essay writing for shortlisted applicants is also conducted.</p>
+</div>
+</div>
+</div>
+</div>
+<p>			</article></div>
+</div>
+</div>
+</div></div></div>  </div>
+
+  
+  
+</article>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  
+  
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<section class="scholarshipslider">
+</section>
+<section class="home_scholor_people wow fadeInUp" id="storiesIndicativeGradeProfiles(IGP)">
+  <div class="region region-footerstories">
+    <div id="block-block-128" class="block block-block">
+
+    
+  <div class="content">
+    <style type="text/css">
+.bottom_storeis h2 {font-size: 6vw;}
+.bottom_storeis h2 span {    background: #fff;    padding: 0 2vw;	color:#11447e;     font-family: "GothamMedium", Gotham;  font-weight: bold;}
+.bottom_storeis h2 b {   font-size: 3vw;    background: #11447e;    padding: 5px;    background: none;    border-top: 5px solid #11447e;   border-bottom:5px solid #11447e;   margin: 0; position: relative;    position: relative;    top: -15px;    right: 15px;}
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-center story_head bottom_storeis">
+			<h2><span><b>Our SMU</b>Stories </span></h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="over_div signunder home_bottom soild_border">
+				<div class="content_community"><a href="/community_profile/jolie_aw#profile" target="_blank">
+					<div class="content-overlay soilid_overly">&nbsp;</div> </a>
+					<a href="/community_profile/jolie_aw#profile" target="_blank"><img class="content-image" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/community/joliew_aw_stories.jpg"> </a></div>
+			</div>
+			<a href="/community_profile/jolie_aw#profile" target="_blank"><div class="over_text">Hi, I'm <b class="sign">Jolie Aw</b> <span> Year 2 Student, School of Information Systems</span></div></a>
+		</div>
+		<div class="col-sm-4">
+			<div class="over_div signunder home_bottom blue_border">
+				<div class="content_community"><a href="/community_profile/ahmad#profile" target="_blank">
+					<div class="content-overlay blue_overly">&nbsp;</div> </a>
+					<a href="/community_profile/ahmad#profile" target="_blank"><img class="content-image" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/community/ahmad_stories.jpg"></a></div>
+			</div>
+			<a href="/community_profile/ahmad#profile" target="_blank"><div class="over_text">Hi, I'm<b class="sign">Ahmad Noorfamy bin Mohamad Salleh</b><span> Year 4 Student, School of Law </span></div></a>
+		</div>
+		<div class="col-sm-4">
+			<div class="over_div signunder home_bottom red_border">
+				<div class="content_community"><a href="/community_profile/valerie_poh#profile" target="_blank"> 
+					<div class="content-overlay green_overly">&nbsp;</div></a>
+					<a href="/community_profile/valerie_poh#profile" target="_blank"><img class="content-image" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/community/valerie_sm_stories.jpg"></a></div>
+			</div>
+			<a href="/community_profile/valerie_poh#profile" target="_blank"><div class="over_text">Hi, I'm <b class="sign">Valerie Poh</b> <span>Year 4 Student, School of Economics</span></div></a>
+		</div>
+		<div class="col-sm-12 text-center">
+			<h3 class="smureadmore"><a href="/our-community" target="_blank"> Read more SMU stories here &gt;&gt; </a></h3>
+		</div>
+	</div>
+</div>
+  </div>
+</div>
+  </div>
+</section> 
+
+<section class="prospect">
+    </section>
+
+<footer id="footer-area">
+  <div class="container">
+    <div class="row" id="footer_menu">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="col-xs-12 col-sm-12 col-md-12 footer-links odd first" id="footer-quicklinks-0">
+            <div class="region region-quicklinks-0">
+    <div id="block-block-126" class="block block-block footer-links-mb">
+
+    
+  <div class="content">
+    <ul><li><a href="/">Home</a></li><li><a href="/whysmu">Why SMU</a></li><li><a href="/programmes">Programmes</a></li><li><a href="/scholarships">Scholarships</a></li><li><a href="/content/financial-aid">Financial Matters</a></li><li><a href="/faqs">FAQs</a></li><li><a href="/admissions">Admissions</a></li></ul>  </div>
+</div>
+<div id="block-block-11" class="block block-block office-undergraduate">
+
+    <h2 class="block-title">Office of Undergraduate Admissions and Financial Assistance</h2>
+  
+  <div class="content">
+    <div class="block-content">
+  Singapore Management University <br>
+  Office of Undergraduate Admissions and Financial Assistance <br>
+  Administration Building Level 3<br>
+  81 Victoria Street, Singapore 188065<br>
+  View <a href="https://www.smu.edu.sg/about/campus-info/campus-map" target="_blank">campus map</a><br>
+Tel: <a href="tel:+6568280980" >(+65) 6828 0980</a><br>
+  Fax: <a href="tel:+6568280303" >(+65) 6828 0303</a><br>
+For financial matters, please <a href="https://admissions.smu.edu.sg/financial-matters" target="_blank">click here</a>.<br>
+  <p style="padding-top: 15px;"><a class="btn btn-default btn-md btn-contact-us btn-default-outline" href="/contact-us" target="_blank">Send us a message</a></p>
+</div>  </div>
+</div>
+<div id="block-block-116" class="block block-block opening-hours">
+
+    <h2 class="block-title">Opening Hours</h2>
+  
+  <div class="content">
+    <div class="block-content">
+  Walk-in Available During Office Hours: <br>8.30am to 5.45pm, Monday to Friday.<br>
+  Closed on Sat/Sun/Public Holidays.<br>
+  <p style="padding-top: 15px;">For Postgraduate matters, click <a href="http://www.smu.edu.sg/programmes/postgraduate" target="_blank">here</a> to contact the respective schools.</p>
+</div>  </div>
+</div>
+<div id="block-block-2" class="block block-block connect-with-us">
+
+    <h2 class="block-title">Connect with us</h2>
+  
+  <div class="content">
+    <div class="block-content"><div class="first"><div class="social-media-link"><a class="badge-evt" href="http://www.facebook.com/smuadmissions" id="facebook" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-facebook.png" /></a></div><div class="social-media-link"><a class="badge-evt" href="http://twitter.com/sgsmu" id="twitter" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-twitter.png" /></a></div><div class="social-media-link"><a class="badge-evt" href="http://www.linkedin.com/edu/school?id=17115" id="linkedin" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-linkedin.png" /></a></div><div class="social-media-link"><a class="badge-evt" href="http://instagram.com/smuadmissions" id="instagram" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-instagram.png" /></a></div><div class="social-media-link"><a class="badge-evt" href="http://www.youtube.com/user/SmuTubeSg" id="youtube" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-youtube.png" /></a></div><!---<div class="social-media-link">
+      <a class="badge-evt" href="?q=rss.xml" target="_blank" id="rss"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-rss.png" ></a>
+    </div>---></div><div class="last" style="display:none;"><div class="social-media-link"><a class="badge-evt" href="http://instagram.com/smuadmissions" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-instagram.png" /></a></div><div class="social-media-link"><a class="badge-evt" href="http://www.youtube.com/user/SmuTubeSg" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-youtube.png" /></a></div><!--<div class="social-media-link">
+      <a class="badge-evt" href="?q=rss.xml" target="_blank"> <img src="/sites/admissions.smu.edu.sg/themes/bootstrap/images/footer-rss.png"></a>
+    </div>---></div></div>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8 hidden-sm hidden-xs">
+        <div class="col-xs-12 col-sm-5 col-md-4 footer-links even" id="footer-quicklinks-1">
+            <div class="region region-quicklinks-1">
+    <div id="block-menu-menu-apply-or-accept" class="block block-menu">
+
+    <h2 class="block-title">Apply or Accept</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf menu-link-admission-requirements"><a href="/admissions" data-evt="Footer: Quicklinks,Click,Admissions Requirements" target="_self">Admission Requirements</a></li>
+<li class="leaf menu-link-apply-to-smu"><a href="/admissions" data-evt="Footer: Quicklinks,Click,Apply Now" target="_self">Apply to SMU</a></li>
+<li class="leaf menu-link-accept-offer"><a href="/admissions/accept-offer" data-evt="Footer: Quicklinks,Click,Accept Offer" target="_self">Accept Offer</a></li>
+<li class="last leaf menu-link-applicants-self-service"><a href="/admissions/applicants-self-service-portal" data-evt="Footer: Quicklinks,Click,Applicant&#039;s Self Service" target="_self">Applicant&#039;s Self Service</a></li>
+</ul>  </div>
+</div>
+<div id="block-menu-menu-financial-matters" class="block block-menu">
+
+    <h2 class="block-title">Financial Matters</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf menu-link-tuition-fees-and-grant"><a href="/tuition-fees-grant" target="_self">Tuition Fees and Grant</a></li>
+<li class="leaf menu-link-financial-aid"><a href="/financial-aid" target="_self">Financial Aid</a></li>
+<li class="last leaf menu-link-student-employment-system"><a href="/student-employment-system">	Student Employment System</a></li>
+</ul>  </div>
+</div>
+  </div>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-xs-12 col-sm-7 col-md-4 footer-links odd" id="footer-quicklinks-2">
+            <div class="region region-quicklinks-2">
+    <div id="block-menu-menu-footer-menu-second-col" class="block block-menu">
+
+    <h2 class="block-title">Programmes</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf menu-link-bachelor-of-accountancy"><a href="/programmes/bachelor-of-accountancy" target="_self">Bachelor of Accountancy</a></li>
+<li class="leaf menu-link-bachelor-of-business-management"><a href="/programmes/bachelor-of-business-management" target="_self">Bachelor of Business Management</a></li>
+<li class="leaf menu-link-bachelor-of-laws"><a href="/programmes/bachelor-of-law" target="_self">Bachelor of Laws</a></li>
+<li class="leaf menu-link-bachelor-of-science-computing--law"><a href="https://sis.smu.edu.sg/bsc-computing-law">Bachelor of Science (Computing &amp; Law)</a></li>
+<li class="leaf menu-link-bachelor-of-science-computer-science"><a href="https://sis.smu.edu.sg/bsc-computer-science">Bachelor of Science (Computer Science)</a></li>
+<li class="leaf menu-link-bachelor-of-science-economics"><a href="/programmes/bachelor-science-economics" target="_self">Bachelor of Science (Economics)</a></li>
+<li class="leaf menu-link-bachelor-of-science-information-systems"><a href="/programmes/bachelor-science-information-systems" target="_self">Bachelor of Science (Information Systems)</a></li>
+<li class="last leaf menu-link--bachelor-of-social-science"><a href="/programmes/bachelor-social-science" target="_self"> Bachelor of Social Science</a></li>
+</ul>  </div>
+</div>
+<div id="block-menu-menu-faq" class="block block-menu">
+
+    <h2 class="block-title">FAQs</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first last leaf menu-link-faqs-overview"><a href="/faqs" target="_self">FAQs Overview</a></li>
+</ul>  </div>
+</div>
+  </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-4 footer-links even last" id="footer-quicklinks-3">
+            <div class="region region-quicklinks-3">
+    <div id="block-menu-menu-footer-menu-first-col" class="block block-menu">
+
+    <h2 class="block-title">Why SMU</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf menu-link-new--innovative-programmes"><a href="/innovative-curriculum" target="_self">New &amp; Innovative Programmes</a></li>
+<li class="leaf menu-link-multi-disciplinary-and-flexible-curriculum"><a href="https://admissions.smu.edu.sg/flexible-curriculum">Multi-Disciplinary And Flexible Curriculum</a></li>
+<li class="leaf menu-link-strong-global-rankings"><a href="https://admissions.smu.edu.sg/global-rankings">Strong Global Rankings</a></li>
+<li class="leaf menu-link-strongest-employment-outcomes-in-singapore"><a href="https://admissions.smu.edu.sg/employment-outcomes">Strongest Employment Outcomes In Singapore</a></li>
+<li class="last leaf menu-link-100-opportunity-for-global-exposure"><a href="https://admissions.smu.edu.sg/global-exposure" target="_self">100% Opportunity For Global Exposure</a></li>
+</ul>  </div>
+</div>
+<div id="block-menu-menu-international-students" class="block block-menu">
+
+    <h2 class="block-title">International Students</h2>
+  
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf menu-link-overview"><a href="/international-students" target="_self">Overview</a></li>
+<li class="leaf menu-link-living-in-singapore"><a href="/international-students/living-in-singapore" target="_self">Living in Singapore</a></li>
+<li class="leaf menu-link-student-life"><a href="/international-students/student-life" target="_self">Student Life</a></li>
+<li class="leaf menu-link-testimonials"><a href="/international-students/testimonials" target="_self">Testimonials</a></li>
+<li class="leaf menu-link-faqs"><a href="/faqs/international-students" target="_self">FAQS</a></li>
+<li class="last leaf menu-link-how-to-apply"><a href="/international-students/how-to-apply/step-1" target="_self">How to Apply</a></li>
+</ul>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </div>
+      <div class="region region-footer">
+    <div id="block-block-146" class="block block-block">
+
+    
+  <div class="content">
+    <link type="text/css" rel="stylesheet" href="//admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/stylesheets/chat.css?25" media="all" />
+
+<div id="chatbox_container">
+    <div id="chatbox_btn" class="chatbox_btn">
+        <div class="icon">
+            <img src="/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/images/smoo.png?22" />
+        </div>
+        <div class="label">Ask SmooSmoo!</div>
+    </div>
+</div>
+
+<div id="chatwindow_container"">
+    <div id="chatwindow" class="chatwindow">
+        <div id="menubar" class="menubar">
+
+            <table class="chatwindow_menubar" cellpadding="0">
+                <tr valign="top">
+                    <td class="chatagent">
+                        <img class="icon_chatagent_inner" src="/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/images/smoo.png?22" />
+                    </td>
+                    <td class="label">
+                        <div class="chatwindow_menubar_label">
+				Ask<b>SmooSmoo</b><br>
+				<span style="color: #60d060;">●</span>
+				<span style="font-size: 11px;"> Chatbot Online</span>
+			</div>
+                    </td>
+                    <td class="clearbtn">
+                            <div class="chatbox_menubar_clear">
+                                <input id="chatwindow_clear_btn" class="chatwindow_clear_btn" type="button" value="Start over" title="Clear your chat history.">
+                            </div>
+                        </td>
+                    <td class="xbtn">
+                        <div class="chatbox_menubar_x">
+                            <input id="chatwindow_close_btn" class="chatwindow_close_btn" type="button" value="X">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        
+        <div class="bootstrap-scope">
+
+            <div class="container">
+                <div class="row">
+                        <div class="panel panel-primary">
+                            <div class="login-overlay-outer"></div>
+                            <div class="login-overlay-inner">
+
+				<center>
+					<p class="welcome-caption">Hello! I am SMU’s resident chatbot, and I’m here to help you with questions you may have! If you prefer to chat with a ‘live’ agent, please click on the other chat box to the left of the screen.</p>
+					<span class="label-email">Email:</span>
+					<input type="text" class="form-control input-email"></input>
+					<button type="button" class="btn btn-primary btn-lg btn-block btn-start btn-start-email">START CHAT</button>
+					<div class="divider"><span>OR</span></div>
+					<button type="button" class="btn btn-primary btn-lg btn-block btn-start btn-start-anonymous">ANONYMOUS CHAT</button>
+					<p class="disclaimer" style="margin-top:70px;font-size:11px;">DISCLAIMER: We do not sell, communicate or divulge your information to any mailing lists </p>
+				</center>
+
+                            </div>
+                            <div class="panel-body">
+                                <ul class="chat">
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Send a message.." />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-chat btn-primary btn-sm" id="btn-chat"></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>  </div>
+</div>
+  </div>
+  </div>
+    <div class="region region-footer-stick">
+    <div id="block-block-136" class="block block-block">
+
+    
+  <div class="content">
+    <style type="text/css">
+.mat_btn2{
+    width: 250px;
+    right: 10px;
+    position: fixed;
+    z-index: 99999;
+    opacity: 0.7;
+    bottom:150px;
+}
+
+.mat_btn{
+    width: 250px;
+    right: 10px;
+    position: fixed;
+    z-index: 99999;
+    opacity: 0.7;
+    bottom:80px;
+}
+
+
+.mat_btn2:hover{
+    opacity: 1;
+}
+
+@media (max-width: 575.98px){
+    .mat_btn2{
+        width: 220px;
+        bottom: 130px;
+    }
+    .mat_btn{
+        width: 220px;
+        bottom: 70px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .mat_btn2{
+        /*width: 40vw;
+        bottom: 12vw;*/
+    }
+}
+</style>
+<!-- Start of  Zendesk Widget script -->
+<!-- script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5c6b9648-b803-4546-9506-7af559bf476e"> </script -->
+<!-- End of  Zendesk Widget script -->
+<!-- script type="text/javascript">
+    window.zESettings = {
+        webWidget: {
+      chat: {
+        hideWhenOffline: false,
+        offlineForm: {
+          greeting: {
+            '*': "We aren't online right now, please check our operating hours.",
+          }
+        }
+      },
+      launcher: {
+               label: {
+                    '*': 'Leave us a Message',
+                },
+        chatLabel: {
+          '*': 'Chat With Us Now'
+        }
+      },
+            position: {
+                horizontal: 'left',
+                vertical: 'bottom'
+            },
+            offset: {
+                horizontal: '0',
+                vertical: '10px',
+                mobile: {
+                    horizontal: '0',
+                    vertical: '10px'
+                }
+            }
+        }
+    };
+</script -->
+<!--<p><a href="https://matriculation.smu.edu.sg/" target="_new"><img class="mat_btn2" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/home/matric_button_3.png"></a></p>-->
+<p><a href="https://publiceservices.smu.edu.sg/psc/ps/EMPLOYEE/HRMS/c/SIS_MA.SIS_ADM_APPL_REG.GBL?&Register=Y&FormID=UGRD" target="_blank"><img class="mat_btn" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/home/matric_button.png"></a></p>
+<!--<p><a href="/admissions/accept-offer"><img class="mat_btn" src="/sites/admissions.smu.edu.sg/files/adm2019/smunew_images/home/matric_button_2.png"></a></p>
+<!--<p><a href="https://matriculation.smu.edu.sg" target="_blank"><img class="mat_btn" src="https://smu.edu.sg/sites/default/files/smu/matric_button_3.png"></a></p>-->  </div>
+</div>
+  </div>
+</footer>
+
+<!------/ Chat Window Started/------>
+
+<script type="text/javascript">
+var LHCChatOptions = {};
+LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var referrer = (document.referrer) ?encodeURIComponent(document.referrer.substr(document.referrer.indexOf('://')+1)) : '';
+var location = (document.location) ?encodeURIComponent(window.location.href.substring(window.location.protocol.length)): '';
+po.src = '//smu.winimy.ai/chat/getstatus/(click)/internal/(position)/bottom_right/(ma)/br/(top)/350/(units)/pixels/(leaveamessage)/true/(department)/30/(operator)/52?r='+referrer+'&l='+location;
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+
+<style>
+#lhc_container iframe.lhc-loading{ background:none!important;}
+#lhc_container iframe{height:380px!Important; width:330px!Important}
+#lhc_container { background-color: #169ece!important;}
+#lhc_header { background-color: #666!important; }
+#lhc_status_container{ background: url(/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_images/chat_icon.png); height: 73px; width: 195px; background-repeat: norepeat; box-shadow: none; border: none; background-size:200px;}
+#lhc_status_container .status-icon { height: 70px; border: none; width:200px; padding:0; background: none;}
+#lhc_header { background-color:#fff!important; height: 45px;}
+#lhc_remote_window, #lhc_min{ display:none;}
+#lhc_title{ display:none;}
+#lhc_header { background-color: #fff!important; height: 51px; background: url(/sites/admissions.smu.edu.sg/themes/smu_admissions2015/smunew_images/smoo_icon.jpg) no-repeat; background-size: 50%; background-position: 9px 13px; border-top:6px solid #263471;}
+#lhc_container {background: url(https://studentservices.smu.edu.sg/sites/studentservices.smu.edu.sg/themes/help/images/bg-1.png); background-size: 100%;
+}
+@media only screen and (max-width: 640px){
+#lhc_status_container {
+position: fixed;
+top: inherit;
+width: auto;
+border-radius: 2px;
+box-shadow: none;
+border: none;
+margin-bottom: 5px;
+bottom: 0;
+left: inherit;
+right:0;
+top: inherit;
+}
+</style>
+<!------/ Chat Window /------>
+
+<script>
+
+jQuery.noConflict();
+
+function makeBig(tag){	
+	console.log("makeBig: "+tag.id);
+	var no = tag.id.substr(3);
+	/* $("#box"+no).css('display','block');
+	$("#back").css('opacity','0.4'); */
+  jQuery("#box"+no).css('display','block');
+	jQuery("#back").css('opacity','0.4');
+}
+function makeSmall(tag){
+	var no = tag.id.substr(3);
+	/* $("#box"+no).css('display','none');
+	$("#back").css('opacity','1'); */
+  jQuery("#box"+no).css('display','none');
+	jQuery("#back").css('opacity','1');
+}
+</script>
+
+
+
+<!--<script src="--><!--/smunew_js/bootstrap.js"></script>-->
+<!--<script src="--><!--/smunew_js/bootstrap.min.js"></script>-->
+<!--<script src="--><!--/smunew_js/wow.js"></script>-->
+<!--<script src="--><!--/smunew_js/nav_menu.js"></script>-->
+<!--<script src="--><!--/smunew_js/jquery-ui.js"></script>-->
+<!--<script src="--><!--/smunew_js/filter.js"></script>-->
+<!--<script src="--><!--/smunew_js/bottom.js"></script>-->
+
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function euCookieComplianceLoadScripts() {}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var eu_cookie_compliance_cookie_name = "";
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/mobile-detect.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/aws-sdk-2.555.0.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/chat.badwords.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/profile.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/chat.main.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/chat.client.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/chatbot/chat.init.min.js?qj7nyd"></script>
+<script type="text/javascript" src="https://admissions.smu.edu.sg/sites/admissions.smu.edu.sg/themes/smu_admissions2015/assets/javascripts/jquery.cookie.js?qj7nyd"></script>
+  <script type="text/javascript" src="/sites/admissions.smu.edu.sg/files/assets2018/js/app.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"061354ff2a","applicationID":"56769272","transactionName":"Z1xTYEsACBcCV0FfDl4WcFdNCAkKTERUUQRvVFBaWAYDFjxaWlIEb09YUU4+FgUEUQ==","queueTime":0,"applicationTime":186,"atts":"SxtQFgMaGxk=","errorBeacon":"bam.nr-data.net","agent":""}</script><script async type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=8599290"></script>
+</body>
+</html>

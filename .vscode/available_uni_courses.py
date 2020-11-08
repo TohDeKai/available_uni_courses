@@ -5,6 +5,8 @@ from PyPDF2 import PdfFileReader
 from pathlib import Path
 import pdfplumber
 import pprint
+from selenium import webdriver
+
 
 # A-Level Grades Conversion to UAS
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
@@ -110,5 +112,11 @@ for i in ntu_course_list:
 '''
 
 #SMU
-#Cannot scrape using bs4 due to "Request unsuccessful. Incapsula incident"
+#Cannot scrape:"Request unsuccessful. Incapsula incident"
+#So I inspected page source, copied and pasted it into a text file instead
 URL_SMU = 'https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp'
+smu = open("SMU_IGP.txt", encoding="utf8")
+file = smu.read()
+smu_list = file.split()
+smu.close()
+print (smu_list)
