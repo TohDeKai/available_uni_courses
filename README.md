@@ -42,12 +42,15 @@
     The websites that I get my information from are 
     </p>
     <p>
+    <img src='http://nus.edu.sg/images/default-source/base/logo.png' alt = 'NUS' width="80" height="80">
     <a href = "http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)"> NUS </a> 
     </p>
     <p>
+    <img src='https://www3.ntu.edu.sg/cits2/maintenance/img/logo/hires_logo_bw.jpg' alt = 'NTU' width="80" height="80">
     <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>.
     </p>
     <p>
+    <img src='https://www.smu.edu.sg/sites/all/themes/smubase_nw2_rev/svg/logo-d-smu.svg' alt = 'SMU' width="80" height="80">
     <a href = "https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp"> SMU </a>.
     </p>
     <br />

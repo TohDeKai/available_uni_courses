@@ -148,5 +148,5 @@ for i in range(len(smu_igp_elems[4:25])):
         igp_grades = (remove_html_tags(str(smu_igp_elems[i+5])))
         uas_for_course = convert_igp_to_uas(igp_grades)
         if uas_for_course <= total_uas:
-            print ('SMU ',course_name, uas_for_course)
+            print ('SMU ,',course_name, uas_for_course)
             print ('\n')
