@@ -50,7 +50,7 @@
     <a href = "https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf"> NTU </a>
     </p>
     <p>
-    <img src='https://www.ashoka.org/sites/default/files/singapore-mgmt-logo.pngg' alt = 'SMU' width="120" height="60">
+    <img src='https://www.ashoka.org/sites/default/files/singapore-mgmt-logo.png' alt = 'SMU' width="120" height="60">
     <a href = "https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp"> SMU </a>
     </p>
     <br />
