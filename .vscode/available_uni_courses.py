@@ -19,6 +19,12 @@ def convert_igp_to_uas(igp):
     uas += grade_to_uas[igp[4]]/2
     uas += 15
     return uas
+    
+def remove_html_tags(text):
+    """Remove html tags from a string"""
+    import re
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
 
 
 # Ask user to enter their A - Levels Score
@@ -59,14 +65,7 @@ for i in nus_igp_elems[3:48]:
     igp_grades = i.find('div', class_=False, id=False)
     if igp_grades == None:
         continue
-    uas_for_course = 0
-    for i in igp_grades.text[:4]:
-        if i == '/':
-            continue
-        uas_for_course += grade_to_uas[i]
-    uas_for_course += grade_to_uas[igp_grades.text[4]]/2
-    # Since GP and PW assumed to be C
-    uas_for_course += 15
+    uas_for_course = convert_igp_to_uas(igp_grades.text)
     if uas_for_course <= total_uas:
         print ('NUS',",",course_elem.text,",",uas_for_course) 
         print ('\n')
@@ -109,17 +108,11 @@ for i in ntu_course_list:
     uas_for_course = 0
     if i[1] == "":
         continue
-    for char in i[1][:4]:
-        if char == '/':
-            continue
-        uas_for_course += grade_to_uas[char]
-    uas_for_course += grade_to_uas[i[1][4]]/2
-    # Since GP and PW assumed to be C
-    uas_for_course += 15
+    else: 
+        uas_for_course = convert_igp_to_uas(i[1])
     if uas_for_course <= total_uas:
         print ('NTU',",",coursename,",",uas_for_course)
         print ('\n')
-
 
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
@@ -131,11 +124,7 @@ smu_soup = BeautifulSoup(smufile, 'html.parser')
 smu_results = smu_soup.find(id="content IndicativeGradeProfiles(IGP)")
 smu_igp_elems = smu_results.find_all("td", class_=False, id=False)
 
-def remove_html_tags(text):
-    """Remove html tags from a string"""
-    import re
-    clean = re.compile('<.*?>')
-    return re.sub(clean, '', text)
+
 
 #Data starts from Index 4, ends at Index 25
 
