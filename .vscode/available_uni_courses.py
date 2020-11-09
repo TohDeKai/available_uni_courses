@@ -6,11 +6,21 @@ from pathlib import Path
 import pdfplumber
 import pprint
 from selenium import webdriver
+import re
 
 
 # A-Level Grades Conversion to UAS
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
-'''
+
+def convert_igp_to_uas(igp):
+    uas = 0
+    for i in igp[:3]:
+        uas += grade_to_uas[i]
+    uas += grade_to_uas[igp[4]]/2
+    uas += 15
+    return uas
+
+
 # Ask user to enter their A - Levels Score
 print ("Please enter your A Level Score")
 h2_1 = input('What is the grade of your first H2?').upper()
@@ -30,11 +40,11 @@ try:
     print ('\n')
 except KeyError:
     print ("Only letter grades are accepted. For example, \"A\" or \"B\"")
-'''
+
 # Web - Scraping
 
 #NUS
-'''
+
 URL_NUS = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
 nus_page = requests.get(URL_NUS)
 nus_soup = BeautifulSoup(nus_page.content, 'html.parser')
@@ -42,7 +52,7 @@ nus_results = nus_soup.find(id='ContentPlaceHolder_contentPlaceholder_TC88F994D0
 
 nus_igp_elems = nus_results.find_all("tr", class_=False, id=False)
 
- Data starts from Index 3 : Faculty of Law, ends at Index 47
+#Data starts from Index 3 : Faculty of Law, ends at Index 47
 
 for i in nus_igp_elems[3:48]:
     course_elem = i.find('td',  class_=False, id=False)
@@ -60,9 +70,9 @@ for i in nus_igp_elems[3:48]:
     if uas_for_course <= total_uas:
         print ('NUS',",",course_elem.text,",",uas_for_course) 
         print ('\n')
-'''
 
-'''
+
+
 #NTU
 # URL_NTU = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
 
@@ -109,14 +119,34 @@ for i in ntu_course_list:
     if uas_for_course <= total_uas:
         print ('NTU',",",coursename,",",uas_for_course)
         print ('\n')
-'''
+
 
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
 #So I inspected page source, copied and pasted it into a text file instead
 URL_SMU = 'https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp'
 smu = open("SMU_IGP.txt", encoding="utf8")
-file = smu.read()
-smu_list = file.split()
-smu.close()
-print (smu_list)
+smufile = smu.read()
+smu_soup = BeautifulSoup(smufile, 'html.parser')
+smu_results = smu_soup.find(id="content IndicativeGradeProfiles(IGP)")
+smu_igp_elems = smu_results.find_all("td", class_=False, id=False)
+
+def remove_html_tags(text):
+    """Remove html tags from a string"""
+    import re
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
+
+#Data starts from Index 4, ends at Index 25
+
+for i in range(len(smu_igp_elems[4:25])):
+    html_tags_removed = (remove_html_tags(str(smu_igp_elems[i+4])))
+    course_name_regex =  re.search("Bachelor", html_tags_removed)
+    uas_for_course = 0
+    if course_name_regex:
+        course_name = (html_tags_removed)
+        igp_grades = (remove_html_tags(str(smu_igp_elems[i+5])))
+        uas_for_course = convert_igp_to_uas(igp_grades)
+        if uas_for_course <= total_uas:
+            print ('SMU ',course_name, uas_for_course)
+            print ('\n')
