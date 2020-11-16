@@ -8,6 +8,10 @@ import pprint
 from selenium import webdriver
 import re
 
+# Links for uni's IGP
+URL_NUS = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
+URL_NTU = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
+URL_SMU = 'https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp'
 
 # A-Level Grades Conversion to UAS
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
@@ -51,7 +55,7 @@ except KeyError:
 
 #NUS
 
-URL_NUS = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
+
 nus_page = requests.get(URL_NUS)
 nus_soup = BeautifulSoup(nus_page.content, 'html.parser')
 nus_results = nus_soup.find(id='ContentPlaceHolder_contentPlaceholder_TC88F994D007_Col00')
@@ -73,12 +77,10 @@ for i in nus_igp_elems[3:48]:
 
 
 #NTU
-# URL_NTU = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
 
 
 filename = Path('NTU_IGP.pdf')
-url = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
-response = requests.get(url)
+response = requests.get(URL_NTU)
 filename.write_bytes(response.content)
 
 pdf_path='NTU_IGP.pdf'
@@ -117,7 +119,6 @@ for i in ntu_course_list:
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
 #So I inspected page source, copied and pasted it into a text file instead
-URL_SMU = 'https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp'
 smu = open("SMU_IGP.txt", encoding="utf8")
 smufile = smu.read()
 smu_soup = BeautifulSoup(smufile, 'html.parser')
