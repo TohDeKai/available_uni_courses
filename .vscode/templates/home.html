@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>Alma Calculator</h1>
+            <div class="menu">
+                <div class="menu-item"><a href='#'>About</a></div>
+                <div class="menu-item"><a href='#'>Contact Me</a></div>
+            </div>
+        </header>
+        <div class="container">
+
+            <h4>1. Enter your grades:</h4>
+            <p><p>
+            <form name="calcpoints" action="?page=calcpoints" method="POST">
+            <!-- Get H21 Grade-->
+                <select name = "h21" style="width:4em;">
+                <option value="20">A</option>
+                <option value="17.5">B</option>
+                <option value="15">C</option>
+                <option value="12.5">D</option>
+                <option value="10">E</option>
+                <option value="5">S</option>
+                <option value="0">U</option>
+                </select>
+            <!-- Get H22 Grade-->
+            <select name = "h22" style="width:4em;">
+              <option value="20">A</option>
+              <option value="17.5">B</option>
+              <option value="15">C</option>
+              <option value="12.5">D</option>
+              <option value="10">E</option>
+              <option value="5">S</option>
+              <option value="0">U</option>
+              </select>
+            <!-- Get H23 Grade-->
+            <select name = "h23" style="width:4em;">
+              <option value="20">A</option>
+              <option value="17.5">B</option>
+              <option value="15">C</option>
+              <option value="12.5">D</option>
+              <option value="10">E</option>
+              <option value="5">S</option>
+              <option value="0">U</option>
+              </select>
+              :H2 Grades
+            <p>
+            <!-- Get H1 Grade-->
+            <select name = "h1" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+              :H1
+            </br>
+            <!-- Get PW Grade-->
+            <select name = "pw" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+              :PW
+            </br>
+            <!-- Get PW Grade-->
+            <select name = "gp" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+              :GP
+              </br>
+            <input type="submit" />
+        </form>
+        <p>
+          {%if rankpoints%}
+          Your rank point is {{rankpoints}}
+          {%else%}
+          Please key in your grades to calculate your rankpoints
+          {% endif %}
+
+        </p>
+        <div class="table-wrapper">
+          <table class="fl-table">
+          <thead>
+          <tr>
+            <th>Course</th>
+            <th>10th Percentile</th>
+          </tr>
+          </thead>
+          {%for course_elem in avail_courses%}
+          <tr>
+            <td>{{course_elem[0]}}</td>
+            <td>{{course_elem[1]}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </body>
+</html>

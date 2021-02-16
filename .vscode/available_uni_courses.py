@@ -30,7 +30,6 @@ def remove_html_tags(text):
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text)
 
-
 # Ask user to enter their A - Levels Score
 print ("Please enter your A Level Score")
 h2_1 = input('What is the grade of your first H2?').upper()
@@ -105,6 +104,7 @@ with pdfplumber.open('NTU_IGP.pdf') as pdf:
         course_and_igp.append(i[2])
         ntu_course_list.append(course_and_igp)
 
+print (ntu_course_list)
 for i in ntu_course_list:
     coursename = i[0]
     uas_for_course = 0
