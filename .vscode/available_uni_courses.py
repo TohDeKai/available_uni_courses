@@ -51,7 +51,7 @@ except KeyError:
     print ("Only letter grades are accepted. For example, \"A\" or \"B\"")
 
 # Web - Scraping
-
+'''
 #NUS
 
 
@@ -115,7 +115,7 @@ for i in ntu_course_list:
     if uas_for_course <= total_uas:
         print ('NTU',",",coursename,",",uas_for_course)
         print ('\n')
-
+'''
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
 #So I inspected page source, copied and pasted it into a text file instead
