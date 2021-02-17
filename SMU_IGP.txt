@@ -326,12 +326,12 @@ padding-right:0;
 </tr>
 <tr>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Accountancy</td>
-<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/C</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBC/C</td>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
 </tr>
 <tr>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Business Management</td>
-<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/C</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBB/C</td>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
 </tr>
 <tr>
@@ -341,7 +341,7 @@ padding-right:0;
 </tr>
 <tr>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Economics)</td>
-<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BBC/A</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">BCC/C</td>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
 </tr>
 <tr>
@@ -351,7 +351,12 @@ padding-right:0;
 </tr>
 <tr>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Computer Science)</td>
-<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAB/B</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/A</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
+</tr>
+<tr>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: left; BORDER-LEFT: 1px solid">Bachelor of Science (Computing And Law)</td>
+<td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">ABB/A</td>
 <td style="BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid">AAA/A</td>
 </tr>
 <tr>
