@@ -69,6 +69,11 @@ h2{
     background: #F8F8F8;
 }
 
+.fl-table tr:hover {
+    background-color:#007bb5;
+    color: white;
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {
