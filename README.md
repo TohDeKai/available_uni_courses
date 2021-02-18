@@ -39,6 +39,9 @@
     This script compares results of the students against the 10th percentile of the Indicative Grade Profile (IGP), and it prints the courses which the student is able to take according to that.
     </p>
     <p>
+    I also created a simple Flask app for this project.
+    </p>
+    <p>
     The websites that I get my information from are 
     </p>
     <p>
