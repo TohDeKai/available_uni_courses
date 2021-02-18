@@ -8,6 +8,12 @@ import pprint
 from selenium import webdriver
 import re
 
+'''PLEASE IGNORE THIS FILE, MAINLY USE TO TROUBLESHOOT AND DEBUG. CLEANED UP CODE IS AT APP.PY'''
+
+
+
+
+
 # Links for uni's IGP
 URL_NUS = 'http://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
 URL_NTU = 'https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'
@@ -72,11 +78,50 @@ for i in nus_igp_elems[3:48]:
     if uas_for_course <= total_uas:
         print ('NUS',",",course_elem.text,",",uas_for_course) 
         print ('\n')
+'''
+filename = Path('NTU_IGP.pdf')
+response = requests.get(URL_NTU)
+filename.write_bytes(response.content)
 
+pdf_path='NTU_IGP.pdf'
+pdf = PdfFileReader(str(pdf_path))
 
+with pdfplumber.open('NTU_IGP.pdf') as pdf:
+    second_page = pdf.pages[1]
+    third_page = pdf.pages[2]
+    second_page_cropped = second_page.crop((0,0.37*float(second_page.height),\
+        second_page.width,second_page.height))
+    ntu_course_list = []
+    second_page_table = second_page_cropped.extract_table(
+        table_settings={
+            'vertical_strategy':'text',
+            'horizontal_strategy':'text',
+            'keep_blank_chars':True
+        }
+    )
+    third_page_table = third_page.extract_table(
+        table_settings={
+            'vertical_strategy':'text',
+            'horizontal_strategy':'text',
+            'keep_blank_chars':True
+        }
+    )
+    def ntu_table_cleanup(table: list):
+        for i in table:
+            if i[0] == '' or i[1] == '' or i[2] == '' :
+                table.remove(i)
+        return table
 
+    #cleaning up ntu_course_list
+    for i in ntu_table_cleanup(second_page_table):
+        ntu_course_list.append(i)
+    for i in (ntu_table_cleanup(third_page_table))[1:]: #Cannot remove 1st row despite filtering
+        ntu_course_list.append(i)
+    
+    for i in ntu_course_list:
+        print (i,f'newrow\n')
+'''
 #NTU
-
 
 filename = Path('NTU_IGP.pdf')
 response = requests.get(URL_NTU)
@@ -115,7 +160,7 @@ for i in ntu_course_list:
     if uas_for_course <= total_uas:
         print ('NTU',",",coursename,",",uas_for_course)
         print ('\n')
-'''
+
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
 #So I inspected page source, copied and pasted it into a text file instead
@@ -140,3 +185,4 @@ for i in range(len(smu_igp_elems[4:25])):
         if uas_for_course <= total_uas:
             print ('SMU ,',course_name, uas_for_course)
             print ('\n')
+'''

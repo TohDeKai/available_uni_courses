@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+      <div class="header">
+        <h1>Alma Calculator</h1>
+        <div class="header-right">
+          <a href="{{url_for('home')}}">Home</a>
+          <a href="{{url_for('contact')}}">Contact</a>
+          <a class="active" href="{{url_for('about')}}"">About</a>
+        </div>
+      </div>
+        <div class="container">
+            <p>This is a personal project of mine, I wanted to explore my interest in web development while creating something that will be useful to people at the same time</p>
+            <p> My sources for the courses are <a href='https://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'>NUS</a>, <a href='https://admissions.smu.edu.sg/admissions/indicative-grade-profiles-igp'>SMU</a> and <a href='https://www3.ntu.edu.sg/oad2/website_files/IGP/NTU_IGP.pdf'>NTU</a></p>
+        </div>
+        <h2> FAQ</h2>
+        <p class='question'>Q: Why aren't there selection of courses from SIT, SUTD and other universites?</p>
+        <p class='answer'>A: The IGP for these universities are not found online </p>
+    </body>
+</html>

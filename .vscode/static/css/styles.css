@@ -13,16 +13,16 @@ body{
     background: #eeeeee;
 }
 h1{
-    font-family:fantasy;
     text-transform: uppercase;
     text-align:center;
+    color:#00adb5
 }
 h2{
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 30px 0;
 }
 
@@ -197,3 +197,20 @@ h2{
      border: none;
      margin: 2% auto;
  }
+ .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+ .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  .fa-github {
+    background: #211F1F;
+    color: #FFFFFF;
+  }
