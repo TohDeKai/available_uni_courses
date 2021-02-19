@@ -5,7 +5,7 @@ import re
 from PyPDF2 import PdfFileReader
 from pathlib import Path
 import pdfplumber
-
+__name__ = "__main__" 
 app = Flask(__name__)
 URL_NUS = 'https://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
 nus_page = requests.get(URL_NUS)
@@ -50,7 +50,7 @@ filename.write_bytes(response.content)
 pdf_path='NTU_IGP.pdf'
 pdf = PdfFileReader(str(pdf_path))
 
-@app.route("/home",methods=['GET','POST'])
+@app.route("/",methods=['GET','POST'])
 def home():
     avail_courses = []
     rankpoints = 'uncalculated'
@@ -154,7 +154,8 @@ def about():
 def contact():
     return render_template('contact.html')
 
-app.run()
+if __name__ == "__main__" :
+    app.run()
 
 
              
