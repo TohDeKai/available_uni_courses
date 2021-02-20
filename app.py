@@ -6,6 +6,7 @@ from PyPDF2 import PdfFileReader
 from pathlib import Path
 import pdfplumber
 __name__ = "__main__" 
+flaskapp = Flask(__name__)
 app = Flask(__name__,template_folder='templates')
 count = 0
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
