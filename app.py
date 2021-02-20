@@ -155,7 +155,7 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == "__main__" :
-    app.run(host="192.168.1.224", port=500, threaded=True)
+    app.run()
 
 
              
