@@ -144,7 +144,7 @@ def home():
                 course.append(uas_for_course)
                 avail_courses.append(course)
 
-    return render_template('home.html',rankpoints = rankpoints,avail_courses = avail_courses,URL_NUS=URL_NUS)
+    return render_template('home.html',rankpoints = rankpoints,avail_courses = avail_courses)
 
 @app.route("/about")
 def about():
