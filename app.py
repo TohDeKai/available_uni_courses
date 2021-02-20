@@ -7,10 +7,6 @@ from pathlib import Path
 import pdfplumber
 __name__ = "__main__" 
 app = Flask(__name__)
-URL_NUS = 'https://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
-nus_page = requests.get(URL_NUS)
-nus_soup = BeautifulSoup(nus_page.content, 'html.parser')
-nus_results = nus_soup.find(id='ContentPlaceHolder_contentPlaceholder_TC88F994D007_Col00')
 count = 0
 grade_to_uas = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
 
@@ -27,10 +23,14 @@ def convert_igp_to_uas(igp):
     uas += grade_to_uas[igp[4]]/2
     uas += 15
     return uas
-
+'''
+#NUS
+URL_NUS = 'https://www.nus.edu.sg/oam/undergraduate-programmes/indicative-grade-profile-(igp)'
+nus_page = requests.get(URL_NUS)
+nus_soup = BeautifulSoup(nus_page.content, 'html.parser')
+nus_results = nus_soup.find(id='ContentPlaceHolder_contentPlaceholder_TC88F994D007_Col00')
 nus_igp_elems = nus_results.find_all("tr", class_=False, id=False)
-#Data starts from Index 3 : Faculty of Law, ends at Index 47
-
+'''
 #SMU
 #Cannot scrape:"Request unsuccessful. Incapsula incident"
 #So I inspected page source, copied and pasted it into a text file instead
@@ -62,7 +62,7 @@ def home():
         gp = request.form.get('gp')
         pw = request.form.get('pw')
         rankpoints = float(h21) + float(h22) + float(h23) + float(h1) + float(gp) + float(pw)
-
+    '''
     #Comparing NUS courses to user input
     for i in nus_igp_elems[3:49]:
         course = []
@@ -83,7 +83,7 @@ def home():
                         course.append(igp_grades.text)
                         course.append(uas_for_course)
                         avail_courses.append(course)
-
+    '''
     #Comparing SMU courses to user input
     for i in range(len(smu_igp_elems[4:25])):
         course = []
