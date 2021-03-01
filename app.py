@@ -63,7 +63,7 @@ def home():
         pw = request.form.get('pw')
         rankpoints = float(h21) + float(h22) + float(h23) + float(h1) + float(gp) + float(pw)
     
-    #Comparing NUS courses to user input
+    #Comparing NUS courses
     for i in nus_igp_elems[3:49]:
         course = []
         course_elem = i.find('td',  class_=False, id=False)
@@ -84,7 +84,7 @@ def home():
                         course.append(uas_for_course)
                         avail_courses.append(course)
     
-    #Comparing SMU courses to user input
+    #Comparing SMU courses 
     for i in range(len(smu_igp_elems[4:25])):
         course = []
         html_tags_removed = (remove_html_tags(str(smu_igp_elems[i+4])))
@@ -101,7 +101,7 @@ def home():
                     course.append(uas_for_course)
                     avail_courses.append(course)
     
-    #Comparing NTU courses to user input
+    #Comparing NTU courses 
     with pdfplumber.open('NTU_IGP.pdf') as pdf:
         second_page = pdf.pages[1]
         third_page = pdf.pages[2]
