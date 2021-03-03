@@ -1,228 +1,152 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
 body{
-    margin: 10px 70px 70px;
-    font-family: 'Roboto Condensed', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    background: #F5F8F9;
-    display:flex;
-    flex-direction: column;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f5f8f9;
 }
+
 h1{
-    text-transform: uppercase;
-    text-align:center;
-    color:#D93635
-
-}
-h2{
-    text-align: center;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #D93635
-
-    ;
-    padding: 30px 0;
-}
-
-/* Table Styles */
-
-.table-wrapper{
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-}
-
-.fl-table {
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap;
-    background-color: white;
-}
-
-.fl-table td, .fl-table th {
-    text-align: center;
-    padding: 8px;
-}
-
-.fl-table td {
-    border-right: 1px solid #f8f8f8;
-    font-size: 12px;
-}
-
-.fl-table thead th {
-    color: #ffffff;
-    background: #EE952E;
+  text-transform: uppercase;
+  text-align:center;
+  color:#D93635
 }
 
 
-.fl-table thead th:nth-child(odd) {
-    color: #ffffff;
-    background: #E6B068;
+table { 
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse; 
+  box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+  font-size: 12px;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #F8F8F8;
+}
+tr:nth-of-type(even) { 
+  background: #ffffff;
+}
+tr:hover {
+  background: #D93635;
+  color: #f5f8f9;
+}
+th { 
+  background: #ee952e; 
+  color: #f5f8f9; 
+  font-weight: bold; 
 }
 
-.fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+th:nth-child(odd) {
+  color: #ffffff;
+  background: #E6B068;
 }
 
-.fl-table tr:hover {
-    background-color:#D93635    ;
-    font-weight: bold;
-    color: white;
+td {
+  border-right: 1px solid #f8f8f8;
 }
 
-/* Responsive */
+td, th { 
+  text-align: center;
+  padding: 8px; 
+}
 
-@media (max-width: 767px) {
-    .fl-table {
-        display: block;
-        width: 100%;
-    }
-    .table-wrapper:before{
-        content: "Scroll horizontally >";
-        display: block;
-        text-align: right;
-        font-size: 11px;
-        color: white;
-        padding: 0 0 10px;
-    }
-    .fl-table thead, .fl-table tbody, .fl-table thead th {
-        display: block;
-    }
-    .fl-table thead th:last-child{
-        border-bottom: none;
-    }
-    .fl-table thead {
-        float: left;
-    }
-    .fl-table tbody {
-        width: auto;
-        position: relative;
-        overflow-x: auto;
-    }
-    .fl-table td, .fl-table th {
-        padding: 20px .625em .625em .625em;
-        height: 60px;
-        vertical-align: middle;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: auto;
-        width: 120px;
-        font-size: 13px;
-        text-overflow: ellipsis;
-    }
-    .fl-table thead th {
-        text-align: left;
-        border-bottom: 1px solid #f7f7f9;
-    }
-    .fl-table tbody tr {
-        display: table-cell;
-    }
-    .fl-table tbody tr:nth-child(odd) {
-        background: none;
-    }
-    .fl-table tr:nth-child(even) {
-        background: transparent;
-    }
-    .fl-table tr td:nth-child(odd) {
-        background: #F8F8F8;
-        border-right: 1px solid #E6E4E4;
-    }
-    .fl-table tr td:nth-child(even) {
-        border-right: 1px solid #E6E4E4;
-    }
-    .fl-table tbody td {
-        display: block;
-        text-align: center;
-    }
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+
+  
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "School"; }
+	td:nth-of-type(2):before { content: "Course"; }
+	td:nth-of-type(3):before { content: "IGP"; }
+	td:nth-of-type(4):before { content: "UAS"; }
 }
 
 /* Style the header with a grey background and some padding */
 .header {
-    overflow: hidden;
-    background-color: #2F2F40;
-    padding: 20px 10px;
-    flex-direction: row;
-  }
-  
-  /* Style the header links */
-  .header a {
-    float: left;
-    color: #E6B068;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-  }
-  
-  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-  .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  /* Change the background color on mouse-over */
-  .header a:hover {
-    background-color: #EE952E;
-    color: black;
-  }
-  
-  /* Style the active/current link*/
-  .header a.active {
-    background-color: #D93635;
-    color: white;
-  }
-  
-  /* Float the link section to the right */
-  .header-right {
-    float: right;
-  }
-  
-  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .header-right {
-      float: none;
-    }
-  }
+  overflow: hidden;
+  padding: 20px 10px;
+  background-color: #2f2f40;
+}
 
- input {
-     background-color: #D93635;
-     color: white;
-     font-family: 'Roboto Condensed', sans-serif;
-     border-radius: 5px;
-     border: none;
-     margin: 2% auto;
- }
- .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
+/* Style the header links */
+.header a {
+  float: left;
+  color: #ee952e;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ee952e;
+  color: #2f2f40;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: #d23635;
+  color: #f5f8f9;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
   }
-  
- .fa-linkedin {
-    background: #007bb5;
-    color: white;
+  .header-right {
+    float: none;
   }
-  .fa-github {
-    background: #211F1F;
-    color: #FFFFFF;
-  }
+}
