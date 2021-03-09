@@ -40,6 +40,7 @@
     </p>
     <p>
     I also created a simple Flask app for this project.
+    You can check it out <a href='https://alevelcalculator.herokuapp.com/'>here</a>.
     </p>
     <p>
     The websites that I get my information from are 
