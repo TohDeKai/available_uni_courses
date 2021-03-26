@@ -26,6 +26,9 @@ tr:nth-of-type(odd) {
 tr:nth-of-type(even) { 
   background: #ffffff;
 }
+tr{
+  transition: all 0.2s;
+}
 tr:hover {
   background: #D93635;
   color: #f5f8f9;
@@ -114,6 +117,7 @@ only screen and (max-width: 760px),
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  transition: all 0.2s;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
@@ -150,3 +154,29 @@ only screen and (max-width: 760px),
     float: none;
   }
 }
+
+/* Styling Submit button */
+.submitbutton {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #D93635;
+  margin: 1% 0px;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  color:#D93635;
+  text-align:center;
+  transition: all 0.2s;
+  }
+  .submitbutton:hover{
+  color:#ffffff;
+  background-color:#D93635;
+  }
+
+  @media all and (max-width:30em){
+  .submitbutton{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
