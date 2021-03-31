@@ -50,8 +50,8 @@ filename.write_bytes(response.content)
 pdf_path='NTU_IGP.pdf'
 pdf = PdfFileReader(str(pdf_path))
 
-@app.route("/",methods=['GET','POST'])
-def home():
+@app.route("/calculate",methods=['GET','POST'])
+def calculate():
     avail_courses = []
     rankpoints = 'uncalculated'
     if request.method == 'POST':
@@ -144,7 +144,7 @@ def home():
                 course.append(uas_for_course)
                 avail_courses.append(course)
 
-    return render_template('home.html',rankpoints = rankpoints,avail_courses = avail_courses)
+    return render_template('calculate.html',rankpoints = rankpoints,avail_courses = avail_courses)
 
 @app.route("/about")
 def about():
@@ -154,9 +154,9 @@ def about():
 def contact():
     return render_template('contact.html')
 
-@app.route("/calculate")
-def calculate():
-    return render_template('calculate.html')
+@app.route("/")
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
