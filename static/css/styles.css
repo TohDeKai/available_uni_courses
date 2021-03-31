@@ -243,6 +243,8 @@ only screen and (max-width: 760px),
   background-color: #002835;
 }
 
-#id {
-  background-color: red;
+a {
+   text-decoration: none; 
+   color: inherit;
 }
+
