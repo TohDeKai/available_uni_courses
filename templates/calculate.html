@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+  
+<!-- https://imgur.com/2jzxFMO link for logo-->
+
+    <body>
+
+      <div class="header">
+
+        <div class="header-right">
+          <a href="{{url_for('home')}}">Home</a>
+          <a href="{{url_for('about')}}"">FAQ</a>
+          <a class="active" href="{{url_for('calculate')}}">Calculate</a>
+        </div>
+          
+      </div>
+
+
+        <div class="container">
+            <p><p>
+            <form name="calcpoints"  method="POST">
+            <!-- Get H21 Grade-->
+            <h2>H2 Grades</h2>
+                <select name = "h21" style="width:4em;">
+                <option value="20">A</option>
+                <option value="17.5">B</option>
+                <option value="15">C</option>
+                <option value="12.5">D</option>
+                <option value="10">E</option>
+                <option value="5">S</option>
+                <option value="0">U</option>
+                </select>
+            <!-- Get H22 Grade-->
+            <select name = "h22" style="width:4em;">
+              <option value="20">A</option>
+              <option value="17.5">B</option>
+              <option value="15">C</option>
+              <option value="12.5">D</option>
+              <option value="10">E</option>
+              <option value="5">S</option>
+              <option value="0">U</option>
+              </select>
+            <!-- Get H23 Grade-->
+            <select name = "h23" style="width:4em;">
+              <option value="20">A</option>
+              <option value="17.5">B</option>
+              <option value="15">C</option>
+              <option value="12.5">D</option>
+              <option value="10">E</option>
+              <option value="5">S</option>
+              <option value="0">U</option>
+              </select>
+            <p>
+            <!-- Get H1 Grade-->
+            <h2>H1 Grades</h2>
+            <select name = "h1" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+            <!-- Get PW Grade-->
+            <select name = "pw" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+
+            <!-- Get PW Grade-->
+            <select name = "gp" style="width:4em;">
+              <option value="10">A</option>
+              <option value="8.75">B</option>
+              <option value="7.5">C</option>
+              <option value="6.25">D</option>
+              <option value="5">E</option>
+              <option value="2.5">S</option>
+              <option value="0">U</option>
+              </select>
+              
+              </br>
+              
+              <button type='submit'> Submit </button>
+        </form>
+        <p>
+          {%if rankpoints%}
+          Your rank point is {{rankpoints}}
+          {%else%}
+          Please key in your grades to calculate your rankpoints
+          {% endif %}
+
+        </p>
+
+
+          <i>The calculated UAS for the courses are all assuming GP and PW to be a C</i>
+          <br>
+          <i>Courses with * require interviews or tests</i>
+          <br>
+          <br>
+        <div class="table-wrapper">
+          <table class="fl-table">
+          <thead>
+          <tr>
+            <th>School</th>
+            <th>Course</th>
+            <th>10th Percentile IGP</th>
+            <th>Calculated UAS</th>
+          </tr>
+          </thead>
+          {%for course_elem in avail_courses%}
+          <tr>
+            <td>{{course_elem[0]}}</td>
+            <td>{{course_elem[1]}}</td>
+            <td>{{course_elem[2]}}</td>
+            <td>{{course_elem[3]}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </body>
+</html>

@@ -154,5 +154,9 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route("/calculate")
+def calculate():
+    return render_template('calculate.html')
+
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
