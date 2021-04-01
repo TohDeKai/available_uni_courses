@@ -94,7 +94,6 @@ td, th {
 }
 
 
-
 .logo img{
   width: 25px;
 }
@@ -202,8 +201,6 @@ select {
 
 
 
-
-/* Styling for mobile*/
 @media screen and (min-width: 500px) {
   .mobileillustration {
     display: none;
@@ -254,6 +251,7 @@ button:hover {
 }
 
 
+/* Max Width 500px styling for mobile*/
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -265,7 +263,7 @@ button:hover {
   }
 
   .desktopillustration{
-    display:none
+    display:none;
   };
 
   .mobileillustration {
