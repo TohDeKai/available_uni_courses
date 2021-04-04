@@ -6,8 +6,8 @@ primary colour
 secondary colour 
 accent 
 */
+
 body{
-  
 font-family: 'Poppins', sans-serif;
   background-color: #C6E4EE;
   margin: 0px;
@@ -23,6 +23,7 @@ h1{
 h2{
   font-family: 'Roboto', sans-serif;
   font-size: xx-large;
+  text-transform: uppercase;
 }
 
 .container {
