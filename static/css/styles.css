@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
 /*
 Colour scheme
@@ -7,7 +7,8 @@ secondary colour
 accent 
 */
 body{
-  font-family: 'Poppins', sans-serif;
+  
+font-family: 'Poppins', sans-serif;
   background-color: #C6E4EE;
   margin: 0px;
 }
@@ -16,11 +17,12 @@ h1{
   text-transform: uppercase;
   text-align:center;
   color:#D93635;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 h2{
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-size: xx-large;
 }
 
 .container {
