@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
-/*
-Colour scheme
-primary colour 
-secondary colour 
-accent 
-*/
 
 body{
 font-family: 'Poppins', sans-serif;
-  background-color: #C6E4EE;
+  background-color: #c6e4ee;
   margin: 0px;
 }
 
@@ -252,7 +246,10 @@ button:hover {
   background-color: #002835;
 }
 
-
+.desktopillustration {
+  display: block;
+  text-align: center;
+}
 /* Max Width 500px styling for mobile*/
 @media screen and (max-width: 500px) {
   .header a {
@@ -269,6 +266,7 @@ button:hover {
   };
 
   .mobileillustration {
+    text-align: center;
     display:block;
   }
   .container {
