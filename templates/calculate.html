@@ -88,8 +88,9 @@
               <option value="0">U</option>
               </select>
               
-              </br>
-              
+            </br>
+
+          </br>
               <button type='submit'> Calculate </button>
         </form>
         <p>
@@ -107,26 +108,30 @@
           <i>Courses with * require interviews or tests</i>
           <br>
           <br>
+        {%if rankpoints == 'uncalculated'%}
+          
+        {%else%}
         <div class="table-wrapper">
           <table class="fl-table">
-          <thead>
-          <tr>
-            <th>School</th>
-            <th>Course</th>
-            <th>10th Percentile IGP</th>
-            <th>Calculated UAS</th>
-          </tr>
-          </thead>
-          {%for course_elem in avail_courses%}
-          <tr>
-            <td>{{course_elem[0]}}</td>
-            <td>{{course_elem[1]}}</td>
-            <td>{{course_elem[2]}}</td>
-            <td>{{course_elem[3]}}</td>
-          </tr>
-          {% endfor %}
-        </table>
-      </div>
+            <thead>
+            <tr>
+              <th>School</th>
+              <th>Course</th>
+              <th>10th Percentile IGP</th>
+              <th>Calculated UAS</th>
+            </tr>
+            </thead>
+            {%for course_elem in avail_courses%}
+            <tr>
+              <td>{{course_elem[0]}}</td>
+              <td>{{course_elem[1]}}</td>
+              <td>{{course_elem[2]}}</td>
+              <td>{{course_elem[3]}}</td>
+            </tr>
+            {% endfor %}
+           </table>
+        </div>
+        {% endif %}
       </div>
     </body>
 </html>
