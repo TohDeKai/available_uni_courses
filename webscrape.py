@@ -146,9 +146,10 @@ def combine(array1,array2):
     for item in array1:
         array2.append(item)
 
-combine(smu_courses,all_course_list)
+
 combine(nus_courses,all_course_list)
 combine(ntu_courses,all_course_list)
+combine(smu_courses,all_course_list)
 
 with open('output.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)

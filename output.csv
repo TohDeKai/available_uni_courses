@@ -1,10 +1,3 @@
-SMU,Bachelor of Accountancy,BBC/C,72.5
-SMU,Bachelor of Business Management,BBB/C,75.0
-SMU,Bachelor of Laws,AAA/A,85.0
-SMU,Bachelor of Science (Economics),BCC/C,70.0
-SMU,Bachelor of Science (Information Systems),BBC/B,73.75
-SMU,Bachelor of Science (Computer Science),ABB/A,80.0
-SMU,Bachelor of Science (Computing And Law),ABB/A,80.0
 NUS,Law*,AAA/A,85.0
 NUS,Medicine*,AAA/A,85.0
 NUS,Nursing*,CCD/B,66.25
@@ -79,3 +72,10 @@ NTU,Sociology,BBC/C,72.5
 NTU,Sport Science & Management,BCC/C,70.0
 NTU,Arts (Education)*,ABC/B,76.25
 NTU,Science (Education)*,AAC/B,78.75
+SMU,Bachelor of Accountancy,BBC/C,72.5
+SMU,Bachelor of Business Management,BBB/C,75.0
+SMU,Bachelor of Laws,AAA/A,85.0
+SMU,Bachelor of Science (Economics),BCC/C,70.0
+SMU,Bachelor of Science (Information Systems),BBC/B,73.75
+SMU,Bachelor of Science (Computer Science),ABB/A,80.0
+SMU,Bachelor of Science (Computing And Law),ABB/A,80.0

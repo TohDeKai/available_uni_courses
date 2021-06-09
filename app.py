@@ -5,15 +5,17 @@ app = Flask(__name__, template_folder='templates')
 
 all_courses = []
 
-with open('output.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
-    for row in csv_reader:
-        all_courses.append(row)
+
 
 
 @app.route("/calculate",methods=['GET','POST'])
+
 def calculate():
+    with open('output.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
+        for row in csv_reader:
+            all_courses.append(row)
     avail_courses = []
     rankpoints = 'uncalculated'
     if request.method == 'POST':
